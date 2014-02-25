@@ -1,0 +1,68 @@
+<load file="__TPL__/Common/head.html"/>
+</head>
+<body class="bodybg">
+<!--页头-->
+<div class="topside01">
+	<div class="top01">
+		<div class="logobox">
+			<div class="logo01"></div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+<div class="centerside02" style="background-color:#F1F1F1;">
+      <div class="global02">
+        <load file="__TPL__/Common/menu.html"/>
+      </div>
+<div class="center01">
+	<!--新闻列表 start-->
+	<div class="newslist">
+		<div class="newslistmain">
+			<div class="newsretailtt">
+				<span class="main_title02">{$music['title']}  &nbsp;&nbsp;&nbsp;  点击量：{$music['click']}   &nbsp;&nbsp;&nbsp;</span>
+			</div>
+			<div class="newsretailside">
+				<div class="newsretailcn">
+				<div style="margin: 0 auto; text-align:center">
+				<p>{$music['name']}</p>
+				</div>
+					<div class="newsretailtxt">
+					<embed src="__ROOT__/{$music.url}" autostart="1"  loop=-1 type="application/x-mplayer2" width="400" height="64"></embed>
+					</div>
+					<span class="newsretaildate">发布于：{$music.time|date:'Y-m-d',@@}</span>
+				</div>
+			</div>
+			<div class="newsretailpage">
+				<span class="close"><a href="javascript:void(0)" onclick="window.close()">〖关闭窗口〗</a></span>
+			</div>
+		</div>
+		<div class="newslistsidecolumn">
+			<!--最新文章-->
+			<div class="textbox">
+				<span class="textboxtt">最新歌曲</span>
+				<div class="textboxlist">
+					<ul><list from="$newmusic" name="n">
+						<li><a href="{|U('Show/music',array('muid'=>$n['muid']))}" target="_blank">{$n['title']}</a></li>
+  					</list></ul>
+				</div>
+			</div>
+			<!--热点信息-->
+			<div class="textbox">
+				<span class="textboxtt">热点歌曲</span>
+        <div class="textboxlist">
+          <ul><list from="$topmusic" name="n">
+            <li><a href="{|U('Show/music',array('muid'=>$n['muid']))}" target="_blank">{$n['title']}</a></li>
+            </list></ul>
+        </div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<!--新闻列表 end-->
+</div>
+</div>
+<div class="clear"></div>
+<!--页脚-->
+<load file="__TPL__/Common/foot.html"/>
+</body>
+</html>

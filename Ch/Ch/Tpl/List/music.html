@@ -1,0 +1,75 @@
+<load file="__TPL__/Common/head.html"/>
+<body>
+<!--页头-->
+<div class="topside01">
+  <div class="top01">
+    <div class="logobox">
+      <div class="logo01"></div>
+    </div>
+  </div>
+</div>
+<!-- #EndLibraryItem -->
+<div class="centerside05" style="background-color: rgb(241, 241, 241);">
+      <div class="global02">
+        <load file="__TPL__/Common/menu.html"/>
+      </div>
+      <div class="clear"></div>
+  <div class="center"> 
+	<!--新闻列表 start-->
+	<div class="newslist">
+		<!--业界动态 start-->
+		<div class="newslistmain" id="n1" style="display:block;">
+			<div class="newslistmaintt">
+				<span class="newstt01">歌曲列表</span>
+			</div>
+			<div class="newslistmainlist">
+				<ul><list from="$music" name="n">
+		            <li><img src="__PUBLIC__/images/0830011428.jpg" class="listpic">
+		            <div style="flot:left;margin-left:110px;">
+						<span class="main_title"><a href="{|U('Show/music',array('muid'=>$n['muid']))}" target="_blank">{$n['title']}</a></span>
+						<span class="main_smalltitle">唱者： &nbsp;&nbsp; 发布日期：{$n.time|date:'Y-m-d',@@} &nbsp;&nbsp; 收听：{$n['click']}</span></div>
+					</li>   					
+				</list></ul>
+			</div>
+			<div class="newslistpage">{$page}</div>			
+		</div>
+		<!--业界动态 end-->
+		<!--网站建设知识 start-->
+		<div style="display:none" id="n2"></div>		
+		<!--网站建设知识 end-->
+		<!--网站策划设计 start-->
+		<div id="n3" style="display:none"></div>
+		<!--网站策划设计 end-->
+		<div class="newslistsidecolumn">
+			<!--最新文章-->
+			<div class="textbox">
+				<span class="textboxtt">最新歌曲</span>
+				<div class="textboxlist">
+					<ul><list from="$newmusic" name="n">
+						<li><a href="{|U('Show/music',array('muid'=>$n['muid']))}" target="_blank">{$n['title']}</a></li>
+  					</list></ul>
+				</div>
+			</div>
+			<!--热点信息-->
+			<div class="textbox">
+				<span class="textboxtt">热点歌曲</span>
+        <div class="textboxlist">
+          <ul><list from="$topmusic" name="n">
+            <li><a href="{|U('Show/music',array('muid'=>$n['muid']))}" target="_blank">{$n['title']}</a></li>
+            </list></ul>
+        </div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<!--新闻列表 end-->
+</div>
+</div>
+<div class="clear"></div>
+<!--页脚-->
+<load file="__TPL__/Common/foot.html"/>
+<div style="display:none;"> 
+统计代码
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+html,body,div,ul,ol,h1,h2,h3,h4,h5,h6,p,th,td,dl,dt,dd,form,input,textarea,select,.clear{margin:0;padding:0;outline:none;}
+html,body{height:100%;overflow: hidden;}
+body{font-family:"Microsoft yahei",Arial, Helvetica, sans-serif;font-size:12px;font-weight:normal;line-height:1.2em;-webkit-text-size-adjust:none;}
+li{list-style:none}
+img{border:none;vertical-align:middle;}
+.clear{font-size:0;line-height:0;width:100%;clear:both;overflow: hidden;}
+#img{}
+.main{margin:-305px 0 0 -436px;width: 872px; height: 500px; overflow: hidden; position: absolute; left:50%;top:50%;}
+.logo {text-align: center;height: 70px; overflow: hidden;position: absolute;left:0;top:0;width: 100%;display: none;}
+.bottom {text-align: center;height: 19px; overflow: hidden;position: absolute;left:0;bottom:0;width: 100%;display: none;}
+.bottom a{padding: 5px 0;}
+.main-con{margin-top:-50px;height: 210px;position: absolute;left:0;top:65%;width: 100%;}
+.main-con a{display: none;}
+.develop{float: left;background: #7dcf1c;}
+.design{float: right; background: #02cae9;}
+.main-con a:hover{background: #fab63e;}
+.bottom a:hover{filter:alpha(opacity=80);-moz-opacity:0.8; -khtml-opacity: 0.8; opacity: 0.8;}

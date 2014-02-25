@@ -1,0 +1,163 @@
+<load file="__TPL__/Common/head.html"/>
+<body class="bodybg">
+<!--页头-->
+<div class="topside01">
+	<div class="top01">
+		<div class="logobox">
+			<div class="logo01"></div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>  <!-- #EndLibraryItem -->
+<div class="centerside02">
+      <div class="global02">
+        <load file="__TPL__/Common/menu.html"/>
+      </div>
+<div class="center01">
+<!--联系我们 start-->
+<div class="contact">
+<div class="contact_lf">
+<div class="contact_title opacityLeft" ><img src="__PUBLIC__/Newimages/contact_title.jpg" width="289" height="42"/></div>
+<div class="contact_box">
+<div class="contact_boxicon opacityLeft"><img src="__PUBLIC__/Newimages/contact_icon01.jpg" width="38" height="31"/></div>
+<div class="contact_boxcn">
+<div class="contact_tt opacityLeft">《刀郎》艺术团（新疆麦盖提县）</div>
+<div class="contact_cn opacityLeft">
+	ADD：新疆喀什地区麦盖提县文化路1001号<br />
+	TEL ：<font color="#ff0000" style="font-weight:bold">400-675-0588</font> <span class="STYLE2">( 团办公室咨询 )</span><br />
+	　　　<font color="#ff0000" style="font-weight:bold">86-020-87545320　87531704 </font><span class="STYLE2">( 网站咨询专线 )</span><br />
+	　　　<font color="#ff0000" style="font-weight:bold">86-020-38104821</font> <span class="STYLE2">( 投诉服务专线 )</span><br />
+	FAX：86-020-33528812 <span class="STYLE2">( 业务传真 )</span><br />
+	E-Mail：<span style="text-decoration:underline">wb117@126.com</span><br />
+	Site：<span style=" text-decoration:underline">http://www.dolan-art.com</span><br />
+	　　　<span style="text-decoration:underline">http://www.dolanlik.com</span><br />
+	　　　<span style="text-decoration:underline">http://www.xj123.biz</span><br />
+	<br />
+</div>
+<div class="contact_tt02 opacityLeft">您可以通过以下方式在线洽谈</div>
+<style type="text/css">
+	.contact_cn02 ul li{ width:93px; display:inline;}
+</style>
+<div class="contact_cn02 opacityLeft">
+	<ul>
+		<li class="ct_bg01"><a href="tencent://message/?uin=530126567&Site=Web新势力&Menu=yes" title="点击这里给我发消息">QQ洽谈</a></li>
+		<li class="ct_bg01"><a href="tencent://message/?uin=995240104&Site=Web新势力&Menu=yes" title="点击这里给我发消息">QQ洽谈</a></li>
+		<li class="ct_bg01"><a href="tencent://message/?uin=476636189&Site=Web新势力&Menu=yes" title="点击这里给我发消息">QQ洽谈</a></li>
+		<li class="ct_bg01"><a href="tencent://message/?uin=8246960&Site=Web新势力&Menu=yes" title="点击这里给我发消息">QQ洽谈</a></li>
+		<li class="ct_bg01"><a href="tencent://message/?uin=51239759&Site=Web新势力&Menu=yes" title="点击这里给我发消息">QQ洽谈</a></li>
+		<li class="ct_bg01"><a href="tencent://message/?uin=164122748&Site=Web新势力&Menu=yes" title="点击这里给我发消息">QQ洽谈</a></li>
+	</ul>
+</div>
+<img class="opacityLeft" src="__PUBLIC__/Newimages/visit.gif"/></div>
+<div class="clear"></div>
+</div>
+<span class="zhedang"></span>
+</div>
+<div class="contact_rt">
+<div class="contact_map opacityRight">
+<div id="map_canvas" style="width: 578px; height: 314px; position: relative; background-color: rgb(229, 227, 223);"></div>
+
+</div>
+<div class="contact_biaoyu opacityRight">
+<span class="ct_biaoyutt"><img src="__PUBLIC__/Newimages/contacttt.jpg" width="146" height="18"/></span>
+<div class="ct_biaoyucn">
+亲爱的朋友，感谢你来Web新势力的网站。如果你有什么意见建议想对我们说，都可以通过下面的方式发送信息给我们。我们将非常乐意跟你畅快的交流！
+</div>
+</div>
+
+<script type="text/javascript">		
+/* 正则检查表单案例 */
+function checkform(){
+if(document.getElementById("name").value.match(/^[\u0391-\uFFE5-\w]+$/) == null || document.getElementById("name").value == '姓名'){
+	alert("姓名不正确");return false;
+}
+else if(document.getElementById("telephone").value.match(/^((\(\d{3}\))|(\d{3}\-))?13[0-9]\d{8}?$|15[89]\d{8}?$/) == null || document.getElementById("telephone").value == '联系方式'){
+	alert("电话号码不正确");return false;
+}
+else if(document.getElementById("qq").value.match(/^[1-9]\d{4,8}$/) == null || document.getElementById("qq") == 'QQ号'){
+	alert("QQ号不正确");return false;
+}
+else if(document.getElementById("content").value == ''){
+	alert("请填写内容");return false;
+}
+}
+
+</script>
+<div class="contact_form opacityRight">
+<form action="{|U('Show/contect')}" method="post" onsubmit="return checkform()">
+<table width="573" border="0" cellspacing="0" cellpadding="0">
+	<tr height="90">
+	<td width="284" valign="top">
+		<span>
+			<div style="line-height:16px; color:#7D7D7D">
+				<b style="color:#323232">您的姓名：</b><br />
+				很高兴认识您								</div>
+			<input name="name" type="text" class="inputtxt11" id="name"/>	
+		</span>						
+    </td>
+	<td width="289" valign="top">
+		<span>
+			<div style="line-height:16px; color:#7D7D7D">
+				<b style="color:#323232">您的电话：</b><br />
+				让我们保持联系								</div>
+			<input name="telephone" type="text" class="inputtxt12" id="telephone"/>	
+	</td>
+	</tr>
+	<tr height="47">
+	<td width="284" valign="top">
+		<span>
+			<div style="line-height:16px; color:#7D7D7D">
+				<b style="color:#323232">有什么是我们可以帮助您的？</b><br />
+				很高兴认识您								</div>
+		</span>						
+    </td>
+	<td width="289" valign="top">
+		<span>
+			<div style="line-height:16px; color:#7D7D7D;width:100px; height:32px;float:left;">
+				<b style="color:#323232">您的QQ：</b><br />
+				让我们成为好友								</div>
+			<input name="qq" type="text" class="inputtxt13" id="qq"/>	
+		</span>						
+    </td>
+	</tr>
+<tr height="125">
+	<td width="284" colspan="2" valign="top">
+	<textarea name="content" class="textarea02" id="content"></textarea>
+	</td>
+</tr>
+	<tr height="47">
+	<td width="284" valign="top">
+		<span>
+			<div style="line-height:16px; color:#7D7D7D">
+			<br />写上您的需求，我们会尽快回复您								
+        </div>
+		</span>						
+    </td>
+	<td width="289" valign="top">
+		<span>
+			<input type="submit" class="submit02" value=""/>	
+		</span>						
+    </td>
+	</tr>
+</table>
+</form>
+</div>
+</div>
+</div>
+<!--联系我们 end-->
+</div>
+</div>
+<!--页脚-->
+<load file="__TPL__/Common/foot.html"/>
+</body>
+</html>
+<script type="text/javascript" charset="utf-8">
+function killErrors() {
+	return true;
+}
+window.onerror = killErrors;
+    $(function () {
+        lazyloadF($("img.lazy"));
+        $("img").trigger("sporty");
+    });
+</script>

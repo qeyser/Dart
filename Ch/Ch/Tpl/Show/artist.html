@@ -1,0 +1,68 @@
+<load file="__TPL__/Common/head.html"/>
+<body class="bodybg">
+<!--页头-->
+<div class="topside01">
+	<div class="top01">
+		<div class="logobox">
+			<div class="logo01"></div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+<div class="centerside02" style="background-color:#F1F1F1;">
+      <div class="global02">
+        <load file="__TPL__/Common/menu.html"/>
+      </div>
+<div class="center01">
+	<!--新闻列表 start-->
+	<div class="newslist">
+		<div class="newslistmain">
+			<div class="newsretailtt">
+				<span class="main_title02">{$artist['name']}  &nbsp;&nbsp;&nbsp;  点击量：{$artist['click']}   &nbsp;&nbsp;&nbsp;</span>
+			</div>
+			<div class="newsretailside">
+				<div class="newsretailcn">
+				<div style="margin: 0 auto; text-align:center">
+				<img src="__ROOT__/{$artist['thumb']}" alt="{$artist['name']}"/><br/>
+				<p>{$artist['name']}</p>
+				</div>
+					<div class="newsretailtxt">
+					{$artist['content']}
+					</div>
+					<span class="newsretaildate">发布于：{$artist.time|date:'Y-m-d',@@}</span>
+				</div>
+			</div>
+			<div class="newsretailpage">
+				<span class="close"><a href="javascript:void(0)" onclick="window.close()">〖关闭窗口〗</a></span>
+			</div>
+		</div>
+		<div class="newslistsidecolumn">
+			<!--最新文章-->
+			<div class="textbox">
+				<span class="textboxtt">最新演员</span>
+				<div class="textboxlist">
+					<ul><list from="$newnews" name="n">
+						<li><a href="{|U('Show/news',array('nid'=>$n['nid']))}" target="_blank">{$n['title']}</a></li>
+  					</list></ul>
+				</div>
+			</div>
+			<!--热点信息-->
+			<div class="textbox">
+				<span class="textboxtt">热点演员</span>
+        <div class="textboxlist">
+          <ul><list from="$topnews" name="n">
+            <li><a href="{|U('Show/news',array('nid'=>$n['nid']))}" target="_blank">{$n['title']}</a></li>
+            </list></ul>
+        </div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<!--新闻列表 end-->
+</div>
+</div>
+<div class="clear"></div>
+<!--页脚-->
+<load file="__TPL__/Common/foot.html"/>
+</body>
+</html>

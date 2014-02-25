@@ -1,0 +1,12 @@
+<?php
+//首页控制器类
+class IndexControl extends CommonControl{
+
+    public function index(){
+        $this->display();
+    }
+
+    public function copy(){
+    	$this->display();
+    }
+}

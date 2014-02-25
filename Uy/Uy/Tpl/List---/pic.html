@@ -1,0 +1,45 @@
+<load file="__TPL__/Common/head.html"/>
+<body class="bodybg">
+<!--页头-->
+<div class="topside01">
+	<div class="top01">
+		<div class="logobox">
+			<div class="logo01"></div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>  <!-- #EndLibraryItem -->
+<div class="centerside02" style="background-color:#F1F1F1;">
+      <div class="global02">
+        <load file="__TPL__/Common/menu.html"/>
+      </div>
+<div class="center01">
+	<!--网站建设 start-->
+<div class="video_construction">
+	<!--网站分类-->
+<div class="video_sort">
+<ul><list from="$pic" name="n">
+<li>
+<div class="videosort">
+	<img src="__ROOT__/{$n['thumb']}" alt="{$n['title']}" width="300" height="212"/>
+	<span class="videosort_tt"><a href="{|U('Show/pic',array('pcid'=>$n['pcid']))}">{$n['title']}</a></span>
+</div>
+</li>
+</list></ul>
+</div>
+<!--网站支持-->
+</div>
+<!--网站建设 end-->
+</div>
+</div>
+<!--页脚-->
+<load file="__TPL__/Common/foot.html"/>
+<!-- #EndLibraryItem -->
+</body>
+</html>
+<script type="text/javascript">
+function killErrors() {
+	return true;
+}
+window.onerror = killErrors;
+</script>

@@ -1,0 +1,252 @@
+<load file="__TPL__/Common/head.html"/>
+<body>
+<div class="topside01">
+  <div class="top01">
+    <div class="logobox">
+      <div class="logo01"></div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+<div class="centerside">
+<div class="center"> 
+<!--Menu start-->
+<div class="bg_picture">
+  <div class="bg_box">
+    <div class="lf_space"><img src="__PUBLIC__/Newimages/lf_space.jpg" width="11" height="280"/></div>
+    <div class="bg_img">
+      <object style="visibility: visible;" id="cu3er-container" data="cu3er.swf" type="application/x-shockwave-flash" width="980" height="280">
+        <param value="transparent" name="wmode">
+        <param value="slider" name="id">
+        <param value="xml=config.xml&amp;font=font.swf" name="flashvars">
+      </object>
+    </div>
+    <div class="rt_space"><img src="__PUBLIC__/Newimages/rt_space.jpg" width="12" height="280"/></div>
+    <div class="clear"></div>
+  </div>
+  <div class="biaoyu">
+  <div class="global01"><load file="__TPL__/Common/menu.html"/></div>
+  <div class="clear"></div>
+  </div>
+</div>
+<!--Video start-->
+<div class="service_news">
+<div class="service">
+  <div class="service_tt"><img src="__PUBLIC__/images/video_tt.jpg" width="681" height="37"/></div>
+  <div class="service_box">
+    <ul id="service_box_ul">
+    <list from="$topvideo" name="n"><li>
+    <span class="service_img"><a href="{|U('Show/video',array('void'=>$n['void']))}" target="_blank">
+    <img src="<empty value="{$n['thumb']}">__PUBLIC__/Newimages/services_img01.jpg<noempty>{$n['thumb']}</empty>"  alt="{$n['title']}" width="199" height="100"/></a></span>
+    <span class="service_title">{$n['title']}</span></li></list>
+    </ul>
+  </div>
+</div>
+<!--News start-->
+<div class="space01"><img src="__PUBLIC__/Newimages/space01.jpg" width="11" height="308"/></div>
+<div class="news" style="position:relative; overflow:hidden">
+<div class="news_tt"><ul>
+  <li class="newsicon" id="news_pic_0"><a href="javascript:show_pic(0)">1</a></li>
+  <li id="news_pic_1"><a href="javascript:show_pic(1)">2</a></li>
+  <li id="news_pic_2"><a href="javascript:show_pic(2)">3</a></li>
+  </ul></div>
+<div class="news_cn" style="overflow:hidden">
+  <div style="width:286px; height:189px; display:block; overflow:hidden">
+  <list from="$topnews" name="n">
+    <div id="news_cn_{$key}" style=" height:189px;display:block; overflow:hidden">
+      <div class="news_cn_img" style="overflow:hidden;">
+      <img class="lazy" src="<empty value="{$n['thumb']}">__PUBLIC__/images/0830011428.jpg<noempty>{$n['thumb']}</empty>" width="256" height="116"/></div>
+      <div class="news_jianxu"> <span class="news_jxtt"><a href="{|U('Show/news',array('nid'=>$n['nid']))}">{$n['title']}</a>
+      <span>{$n.time|date:'Y-m',@@}</span></span>
+      <span class="news_jxcn">{$n['content']}</span> </div>
+    </div>
+    </list>
+  </div>
+  <div class="news_list" style="overflow:hidden">
+    <ul><list from="$news" name="n">
+      <li><a href="{|U('Show/news',array('nid'=>$n['nid']))}">{$n['title']}</a></li>
+    </list></ul>
+  </div>
+</div>
+<span style="position:absolute; left:245px; top:231px;"><a href="{|U('List/news')}" style="width:30px; height:30px; display:block;"></a></span> 
+</div>
+<div class="space02"><img src="__PUBLIC__/Newimages/space02.jpg" width="12" height="308"/></div>
+<div class="clear"></div>
+</div>
+<script type="text/javascript">
+var hot_video_index = 0;
+function show_pic(){
+for(var i = 0; i < 3 ;i++){
+$("#news_cn_" + i).hide();
+$("#news_pic_" + i).removeClass("newsicon");
+}
+$("#news_cn_" + hot_video_index).show();
+$("#news_pic_" + hot_video_index).addClass("newsicon");	
+hot_video_index++;
+if(hot_video_index > 2){
+hot_video_index = 0;
+}
+}
+function set_pic(index){
+hot_video_index = index;
+show_pic();
+}
+function loop_util(){
+show_pic();
+}
+setInterval(loop_util, 3000);
+</script> 
+
+<!-- Artist start-->
+<div id="out_pic_div">
+<a href="javascript:void(0)" onClick="move_pic('left',1)" id="pic_leftan"></a>
+<div id="pic_div"><ul id="pic_ul"><list from="$artist" name="n">
+<li><a href="{|U('Show/artist',array('arid'=>$n['arid']))}"><img src="{$n.thumb}" width="110" height="80" alt="24" /></a></li>
+</list></ul></div>
+<a href="javascript:void(0)" onClick="move_pic('right',1)" id="pic_rightan"></a>
+</div><!--out_pic_div-->
+<script type="text/javascript">
+var i_n=0;//当前第几张图片
+var i_all=0; //共几张图片
+var f_settime; //定时器
+var b_direction="left";//方向
+function move_pic(id,i){
+  var ii=i_all-7;
+  if (ii<1)return;
+  if(b_direction=="left"){
+    i_n-=1;
+  }else{
+    i_n+=1;
+  }
+  if(i_n<1){
+    i_n=2;
+    b_direction="right";
+  }
+  if(i_n>i_all-6){
+    i_n=i_all-7;
+    b_direction="left";
+  }
+  if(i==0)
+    $("#pic_ul").animate({left: -(i_n-1)*134+"px"},"slow");
+  else
+    $("#pic_ul").css("left", -(i_n-1)*134+"px");
+}
+var ad_inter;
+$(document).ready(function(){
+  ad_inter=setInterval("top_adpic('')", 4000);
+  $("#topad_ul li").hover(function(){
+    clearInterval(ad_inter);
+  },function(){
+    ad_inter=setInterval("top_adpic('')", 4000);
+  });
+  i_all=$("#pic_ul li").size();
+  $("#pic_ul").css("width",i_all*134);
+  if(i_all>7)f_settime = setInterval("move_pic('left',0)", 4000);
+  $("#pic_leftan,#pic_rightan").hover(function(){
+    clearInterval(f_settime);
+  },function(){
+    f_settime = setInterval("move_pic('left',0)", 4000);
+  });
+});
+</script>
+
+<div class="snews_list">
+<!--Works start-->
+  <div class="snews">
+    <div class="snews_tt1"><span class="frs"><a href="{|U('List/works')}">更多>></a></span></div>
+    <div class="snews_box">
+      <ul><list from="$works" name="n">
+        <li><a href="{|U('Show/works',array('wrid'=>$n['wrid']))}">{$n['title']}</a><span class="fr">{$n.time|date:'Y-m',@@}</span></li>
+      </list></ul>
+    </div>
+  </div>
+
+<div class="space01"><img src="__PUBLIC__/Newimages/space01.jpg" width="11" height="308"/></div>
+
+<!--Video start-->
+<div class="snews">
+  <div class="snews_tt2"><span class="frs"><a href="{|U('List/article')}">更多>></a></span></div>
+  <div class="snews_box">
+    <ul><list from="$article" name="n">
+      <li><a href="{|U('Show/article',array('arid'=>$n['arid']))}">{$n['title']}</a><span class="fr">{$n.time|date:'Y-m',@@}</span></li>
+    </list></ul>
+  </div>
+</div>
+
+<div class="space01"><img src="__PUBLIC__/Newimages/space01.jpg" width="11" /></div>
+
+<!--Music start-->
+<div class="snews">
+  <div class="snews_tt3"><span class="frs"><a href="{|U('List/music')}">更多>></a></span></div>
+  <div class="snews_box">
+    <ul><list from="$music" name="n">
+      <li><a href="{|U('Show/music',array('muid'=>$n['muid']))}">{$n['title']}</a><span class="fr">{$n.time|date:'Y-m',@@}</span></li>
+    </list></ul>
+  </div>
+</div>
+
+  <div class="clear"></div>
+</div>
+
+<!--Picture start-->
+<div class="bgnews_list">
+  <div class="bgnews">
+    <div class="bgnews_tt"><span class="frs"><a href="{|U('List/pic')}">更多>></a></span></div>
+    <div class="bgnews_box">
+      <ul id="bgnews_box_ul"><list from="$pic" name="n">
+        <li class="fli"> <span class="bgnews_img"><a href="#">
+        <img src="{$pickupImage}" alt="广州网站建设" width="178" height="140"/></a></span> <span class="bgnews_title"><a href="#">WebDesign 高端网站建设：</a></span></li>
+      </list></ul>
+    </div>
+  </div>
+  <div class="spacebg"><img src="__PUBLIC__/Newimages/spacebg.jpg" width="11" height="392" /></div>
+  <div class="clear"></div>
+</div>
+
+<!--LOGO start-->
+<div class="logolist">
+  <div class="lfbtn"><img src="__PUBLIC__/logoimages/lfbtn.jpg" alt="广州网络营销NEWS" width="24" height="23"/></div>
+  <div class="logo_list">
+    <ul>
+      <li><a href="#"><img src="__PUBLIC__/logoimages/logo-01.jpg" alt="广州网络营销N1" width="105" height="83"/></a></li>
+      <li><a href="#"><img src="__PUBLIC__/logoimages/logo-01.jpg" alt="广州网络营销N1" width="105" height="83"/></a></li>
+      <li><a href="#"><img src="__PUBLIC__/logoimages/logo-01.jpg" alt="广州网络营销N1" width="105" height="83"/></a></li>
+      <li><a href="#"><img src="__PUBLIC__/logoimages/logo-01.jpg" alt="广州网络营销N1" width="105" height="83"/></a></li>
+      <li><a href="#"><img src="__PUBLIC__/logoimages/logo-01.jpg" alt="广州网络营销N1" width="105" height="83"/></a></li>
+      <li><a href="#"><img src="__PUBLIC__/logoimages/logo-01.jpg" alt="广州网络营销N1" width="105" height="83"/></a></li>
+      <li><a href="#"><img src="__PUBLIC__/logoimages/logo-01.jpg" alt="广州网络营销N1" width="105" height="83"/></a></li>
+      <li><a href="#"><img src="__PUBLIC__/logoimages/logo-01.jpg" alt="广州网络营销N1" width="105" height="83"/></a></li>
+    </ul>
+  </div>
+  <div class="rtbtn"><img src="__PUBLIC__/logoimages/rtbtn.jpg" alt="广州网络营销rt"width="24" height="23"/></div>
+  <div class="clear"></div>
+</div>
+  </div>
+</div>
+
+<!--Foot start-->
+<load file="__TPL__/Common/foot.html"/>
+<script src="__PUBLIC__/js/swfobject.js"></script> 
+<script type="text/javascript">
+$(function () {
+    var flashvars = {};
+    flashvars.xml = "config.xml";
+    flashvars.font = "font.swf";
+    var attributes = {};
+    attributes.wmode = "transparent";
+    attributes.id = "slider";
+    swfobject.embedSWF("cu3er.swf", "cu3er-container", "980", "280", "9", "expressInstall.swf", flashvars, attributes);
+    jQuery(function () {
+        jQuery(".logo_list").jCarouselLite({
+            btnNext: ".lfbtn",
+            btnPrev: ".rtbtn",
+            visible: 7,
+            auto: 800,
+            speed: 1000
+            /*circular: false*/
+        });
+    });
+});
+</script>
+</body>
+</html>
